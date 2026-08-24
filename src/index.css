@@ -1,0 +1,677 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0d0d;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 75px;
+  padding: 0 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #242424;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+.brand {
+  color: #e5e5e5;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8cff9b;
+  box-shadow: 0 0 12px #8cff9b;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: calc(100vh - 75px);
+  padding: 10vh 12vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin-bottom: 35px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+.hero h1 {
+  font-size: clamp(90px, 15vw, 200px);
+  line-height: 0.8;
+  letter-spacing: -10px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: transparent;
+  -webkit-text-stroke: 1px #ededed;
+  transition: 0.5s;
+}
+
+.hero h1 span:hover {
+  color: #ededed;
+}
+
+.hero-text {
+  margin-top: 50px;
+  color: #777;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+  margin-top: 40px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  border: 1px solid #383838;
+  background: transparent;
+  color: #ddd;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    transform 0.3s;
+}
+
+.main-button:hover {
+  background: #ededed;
+  color: #0d0d0d;
+  transform: translateY(-4px);
+}
+
+.button-arrow {
+  font-size: 18px;
+}
+
+/* =========================
+   HERO DECORATION
+========================= */
+
+.hero-decoration {
+  position: absolute;
+  right: 10vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #242424;
+  animation: rotate 15s linear infinite;
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+}
+
+.circle-2 {
+  width: 280px;
+  height: 280px;
+  left: 60px;
+  top: 60px;
+  border-color: #303030;
+  animation-direction: reverse;
+  animation-duration: 10s;
+}
+
+.year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "DM Mono", monospace;
+  color: #303030;
+  font-size: 70px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.message-section,
+.things-section,
+.memory-section {
+  padding: 130px 12vw;
+}
+
+.section-label {
+  margin-bottom: 35px;
+  color: #555;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.message-section {
+  opacity: 0.25;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s,
+    transform 0.8s;
+}
+
+.message-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message-card {
+  max-width: 950px;
+  padding: 45px;
+  border: 1px solid #292929;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      #1a1f2a,
+      transparent 35%
+    ),
+    #131313;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #444;
+}
+
+.message-content h2 {
+  font-size: clamp(45px, 6vw, 80px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+
+.message-content h2 span {
+  color: #666;
+}
+
+.typing-text {
+  max-width: 650px;
+  margin-top: 45px;
+  color: #858585;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.signature {
+  margin-top: 45px;
+  color: #444;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.things-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #292929;
+}
+
+.thing-card {
+  padding: 45px 30px;
+  min-height: 260px;
+  border-bottom: 1px solid #292929;
+  transition: 0.3s;
+}
+
+.thing-card:nth-child(odd) {
+  border-right: 1px solid #292929;
+}
+
+.thing-card:hover {
+  background: #131313;
+  transform: translateY(-5px);
+}
+
+.thing-number {
+  color: #444;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+.thing-card h3 {
+  margin-top: 45px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.thing-card p {
+  max-width: 420px;
+  color: #666;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.memory-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 70px;
+}
+
+.memory-heading h2 {
+  font-size: clamp(55px, 8vw, 110px);
+  line-height: 0.85;
+  letter-spacing: -6px;
+}
+
+.memory-heading h2 span {
+  color: #555;
+}
+
+.memory-heading p {
+  color: #555;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 20px;
+}
+
+.photo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.photo-card {
+  min-height: 270px;
+  background: #151515;
+  border: 1px solid #242424;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.photo-large {
+  min-height: 560px;
+}
+
+.photo-card:hover {
+  transform: scale(0.985);
+  border-color: #444;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background:
+    linear-gradient(
+      135deg,
+      #171717,
+      #111
+    );
+  color: #333;
+  font-family: "DM Mono", monospace;
+}
+
+.photo-placeholder span {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.photo-placeholder small {
+  color: #292929;
+  font-size: 9px;
+}
+
+/* =========================
+   PROJECT IMAGES
+========================= */
+
+.photo-card {
+  position: relative;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-info {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(13, 13, 13, 0.85);
+  border: 1px solid #292929;
+  font-family: "DM Mono", monospace;
+}
+
+.project-info span {
+  color: #ededed;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.project-info small {
+  color: #666;
+  font-size: 8px;
+}
+
+/* =========================
+   FINAL / CONTACT
+========================= */
+
+.final-section {
+  min-height: 90vh;
+  padding: 150px 12vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.final-line {
+  width: 50px;
+  height: 1px;
+  background: #444;
+  margin-bottom: 40px;
+}
+
+.final-small {
+  color: #555;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.final-section h2 {
+  margin-top: 35px;
+  font-size: clamp(75px, 13vw, 180px);
+  line-height: 0.78;
+  letter-spacing: -9px;
+}
+
+.final-section p {
+  margin-top: 50px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-links {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.social-icon svg rect,
+.social-icon svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.social-icon .instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-icon:hover {
+  color: #ededed;
+  transform: translateY(-3px);
+}
+
+.social-icon:hover svg {
+  transform: scale(1.08);
+}
+
+.footer-text {
+  margin-top: 30px;
+  color: #333;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 7vw;
+  }
+
+  .hero-decoration {
+    opacity: 0.3;
+    right: -150px;
+  }
+
+  .message-section,
+  .things-section,
+  .memory-section {
+    padding: 100px 7vw;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-large {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 0 7vw;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero h1 {
+    font-size: 80px;
+    letter-spacing: -6px;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  .things-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thing-card:nth-child(odd) {
+    border-right: none;
+  }
+
+  .message-card {
+    padding: 25px;
+  }
+
+  .message-header {
+    margin-bottom: 50px;
+  }
+
+  .memory-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .memory-heading p {
+    text-align: left;
+  }
+
+  .photo-large,
+  .photo-card {
+    min-height: 330px;
+  }
+
+  .final-section {
+    padding: 100px 7vw;
+  }
+
+  .final-section h2 {
+    font-size: 80px;
+    letter-spacing: -5px;
+  }
+
+  .social-links {
+    gap: 14px;
+    margin-top: 40px;
+  }
+
+  .social-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .social-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}
