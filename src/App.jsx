@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app notranslate" translate="no">
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="brand">/ profile</div>
@@ -92,7 +92,6 @@ function App() {
         </div>
 
         <div className="things-grid">
-
           <article className="thing-card">
             <div className="thing-number">01</div>
 
@@ -123,7 +122,7 @@ function App() {
 
             <p>
               Developing robust systems
-              with scalable databases, secure APIs, 
+              with scalable databases, secure APIs,
               and efficient data processing.
             </p>
           </article>
@@ -134,8 +133,8 @@ function App() {
             <h3>Database</h3>
 
             <p>
-              Structuring reliable data storage, 
-              ensuring high availability, 
+              Structuring reliable data storage,
+              ensuring high availability,
               and maintaining strict data integrity.
             </p>
           </article>
@@ -143,7 +142,7 @@ function App() {
       </section>
 
       {/* PROJECTS */}
-      {/* <section className="memory-section">
+      <section className="memory-section">
         <div className="section-label">
           03 / PROJECTS
         </div>
@@ -163,99 +162,48 @@ function App() {
         </div>
 
         <div className="photo-grid">
+          {/* PROJECT 01 */}
           <div className="photo-card photo-large">
-            <div className="photo-placeholder">
+            <img
+              src="/project1.png"
+              alt="Project 01"
+            />
+
+            <div className="project-info">
               <span>PROJECT 01</span>
               <small>PERSONAL WEBSITE</small>
             </div>
           </div>
 
           <div className="photo-column">
+            {/* PROJECT 02 */}
             <div className="photo-card">
-              
-              <div className="photo-placeholder">
+              <img
+                src="/project2.png"
+                alt="Project 02"
+              />
+
+              <div className="project-info">
                 <span>PROJECT 02</span>
-                <small>REACT APP</small>
+                <small>BACKEND/DATABASE</small>
               </div>
             </div>
 
+            {/* PROJECT 03 */}
             <div className="photo-card">
-              
-              <div className="photo-placeholder">
+              <img
+                src="/project3.png"
+                alt="Project 03"
+              />
+
+              <div className="project-info">
                 <span>PROJECT 03</span>
                 <small>WEB EXPERIMENT</small>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
-
-       {/* PROJECTS */}
-<section className="memory-section">
-  <div className="section-label">
-    03 / PROJECTS
-  </div>
-
-  <div className="memory-heading">
-    <h2>
-      Several
-      <br />
-      <span>projects.</span>
-    </h2>
-
-    <p>
-      Things I've built.
-      <br />
-      More coming soon.
-    </p>
-  </div>
-
-  <div className="photo-grid">
-
-    {/* PROJECT 01 */}
-    <div className="photo-card photo-large">
-      <img
-        src="/project1.png"
-        alt="Project 01"
-      />
-
-      <div className="project-info">
-        <span>PROJECT 01</span>
-        <small>PERSONAL WEBSITE</small>
-      </div>
-    </div>
-
-    <div className="photo-column">
-
-      {/* PROJECT 02 */}
-      <div className="photo-card">
-        <img
-          src="/project2.png"
-          alt="Project 02"
-        />
-
-        <div className="project-info">
-          <span>PROJECT 02</span>
-          <small>BACKEND/DATABASE</small>
-        </div>
-      </div>
-
-      {/* PROJECT 03 */}
-      <div className="photo-card">
-        <img
-          src="/project3.png"
-          alt="Project 03"
-        />
-
-        <div className="project-info">
-          <span>PROJECT 03</span>
-          <small>WEB EXPERIMENT</small>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* CONTACT / FOOTER */}
       <section className="final-section">
@@ -276,21 +224,9 @@ function App() {
           <br />
           Please get in touch.
         </p>
-       
-        {/* <button
-          className="main-button"
-          onClick={() => {
-            window.location.href =
-              "mailto:hello@example.com";
-          }}
-        >
-          <span>CONTACT ME</span>
-          <span className="button-arrow">↗</span>
-        </button> */}
 
         {/* SOCIAL ICONS */}
         <div className="social-links">
-
           {/* GITHUB */}
           <a
             href="https://github.com/miyay-r"
@@ -308,7 +244,7 @@ function App() {
 
           {/* LINKEDIN */}
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/reyriannn"
             target="_blank"
             rel="noreferrer"
             className="social-icon"
@@ -352,7 +288,6 @@ function App() {
               />
             </svg>
           </a>
-
         </div>
 
         <div className="footer-text">
